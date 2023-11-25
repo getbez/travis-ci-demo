@@ -15,7 +15,7 @@ before_script:
 
 script:
   - docker --version # print the version for logging
-  - docker build -t simple-node .
+  - docker build -t simple-node --build-arg DAY_OF_WEEK=${DAY_OF_WEEK} .
   - docker tag simple-node bezag/simple-node:latest
 
 after_success:
